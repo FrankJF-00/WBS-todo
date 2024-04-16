@@ -26,3 +26,7 @@ html {
   /* font-size: calc(15px + 0.390625vw); */
   font-size: calc(1rem + 0.25vw);
 }
+
+body {
+  background: linear-gradient(185deg, rgba(236, 239, 240, 1) 0%, rgba(177, 180, 182, 1) 100%);
+}
