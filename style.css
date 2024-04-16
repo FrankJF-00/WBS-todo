@@ -27,6 +27,7 @@ html {
   font-size: calc(1rem + 0.25vw);
 }
 
+
 header {
   display: flex;
   justify-content: space-between;
@@ -92,4 +93,8 @@ header {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
   clip-path: inset(50%);
+
+body {
+  background: linear-gradient(185deg, rgba(236, 239, 240, 1) 0%, rgba(177, 180, 182, 1) 100%);
 }
+
