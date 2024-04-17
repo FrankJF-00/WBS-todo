@@ -26,6 +26,6 @@ const todoList = {
   },
 };
 // button to test functionality
-document.querySelector("button").addEventListener("click", () => {
+document.querySelector("#todo-add-btn").addEventListener("click", () => {
   todoList.addItem();
 });
