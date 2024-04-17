@@ -14,7 +14,7 @@ const todoList = {
     todoInput.placeholder = "add a tada";
     // Copy the text from the input field and paste it into the newly created input
     const inputField = document.querySelector("input");
-    todoInput.value = inputField.value;
+    todoInput.value = inputField.value.trim(); // Trim the input value
     // create delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
@@ -52,8 +52,8 @@ const todoList = {
 // function to handle adding a new todo item
 function handleAddTodo() {
   // check if the input field is empty
-  if (todoList.input.value === "") {
-    todoList.input.placeholder = "Please add a todo!";
+  if (document.querySelector("input").value.trim() === "") {
+    alert("Please add a todo!");
   } else {
     todoList.addItem();
     todoList.input.value = ""; // clear the input field
@@ -61,7 +61,9 @@ function handleAddTodo() {
 }
 
 // button to test functionality
-document.querySelector("#todo-add-btn").addEventListener("click", handleAddTodo);
+document
+  .querySelector("#todo-add-btn")
+  .addEventListener("click", handleAddTodo);
 
 // listen for keydown event on the input field
 document.querySelector("#todo-input").addEventListener("keydown", (event) => {
