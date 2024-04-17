@@ -6,9 +6,23 @@
   box-sizing: border-box;
 }
 
+/* OPTIONAL: Responsive font sizes. They get a bit big when on Desktop Fullscreen */
+html {
+  /* 1rem = 10px */
+  /* font-size: 62.5%; */
+  /*font size is responsive to screen size*/
+  /* font-size: calc(15px + 0.390625vw); */
+  font-size: calc(1rem + 0.25vw);
+}
+
 body {
   width: 25rem;
   margin: 0 auto;
+  background: linear-gradient(
+    185deg,
+    rgba(236, 239, 240, 1) 0%,
+    rgba(177, 180, 182, 1) 100%
+  );
 }
 
 /* This is to keep the footer at the bottom always */
@@ -17,7 +31,6 @@ body {
 #flex-container {
   display: flex;
   flex-direction: column;
-
   min-height: 100svh;
 }
 #flex-container > footer {
@@ -59,15 +72,6 @@ body {
   background-image: url("img/circle-check-regular.svg");
   background-repeat: no-repeat;
 }
-/* OPTIONAL: Responsive font sizes. They get a bit big when on Desktop Fullscreen */
-html {
-  /* 1rem = 10px */
-  /* font-size: 62.5%; */
-  /*font size is responsive to screen size*/
-  /* font-size: calc(15px + 0.390625vw); */
-  font-size: calc(1rem + 0.25vw);
-}
-
 
 header {
   display: flex;
@@ -102,7 +106,7 @@ header {
 }
 
 .fa-regular {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 400;
   font-style: normal;
   font-variant: normal;
@@ -134,8 +138,4 @@ header {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
   clip-path: inset(50%);
-
-body {
-  background: linear-gradient(185deg, rgba(236, 239, 240, 1) 0%, rgba(177, 180, 182, 1) 100%);
 }
-
