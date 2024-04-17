@@ -36,12 +36,12 @@ const todoList = {
       if (checkBtn.checked) {
         checkBtn.classList.add("check-btn-checked");
         todoInput.classList.add("input-checked");
-        deleteBtn.classList.add("delete-btn-disabled"); // Add the class to disable the delete button
+        deleteBtn.classList.add("delete-btn-disabled");
         listContainer.appendChild(newItem); // Move the todo item to the bottom of the main
       } else {
         checkBtn.classList.remove("check-btn-checked");
         todoInput.classList.remove("input-checked");
-        deleteBtn.classList.remove("delete-btn-disabled"); // Remove the class to enable the delete button
+        deleteBtn.classList.remove("delete-btn-disabled");
         listContainer.prepend(newItem); // Move the todo item back to the top of the main
       }
     });
