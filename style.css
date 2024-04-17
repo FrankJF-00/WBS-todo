@@ -68,6 +68,7 @@ header {
   appearance: none;
   margin: 0.5rem;
   background-position: center;
+  opacity: 1;
 }
 .delete-btn {
   background-color: unset;
@@ -79,7 +80,15 @@ header {
   background-image: url("img/circle-check-regular.svg");
   background-repeat: no-repeat;
 }
-
+.check-btn-checked {
+  background-image: url("img/circle-check-solid.svg");
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.input-checked {
+  text-decoration: line-through;
+  color: grey;
+}
 #todo-input {
   flex-grow: 1;
   padding: 0.5rem;
