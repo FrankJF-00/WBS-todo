@@ -38,11 +38,13 @@ const todoList = {
         todoInput.style.color = "gray";
         checkBtn.classList.add("check-btn-done");
         deleteBtn.style.opacity = "0.5";
+        listContainer.appendChild(newItem); // Move the todo item to the bottom of the main
       } else {
         todoInput.style.textDecoration = "none";
         todoInput.style.color = "black";
         checkBtn.classList.remove("check-btn-done");
         deleteBtn.style.opacity = "1";
+        listContainer.prepend(newItem); // Move the todo item back to the top of the main
       }
     });
   },
@@ -60,10 +62,10 @@ function handleAddTodo() {
 }
 
 // button to test functionality
-document.querySelector("button").addEventListener("click", handleAddTodo);
+document.querySelector("#todo-add-btn").addEventListener("click", handleAddTodo);
 
 // listen for keydown event on the input field
-document.querySelector("input").addEventListener("keydown", (event) => {
+document.querySelector("#todo-input").addEventListener("keydown", (event) => {
   // check if the key pressed is ENTER
   if (event.key === "Enter") {
     handleAddTodo();

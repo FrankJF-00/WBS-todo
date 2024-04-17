@@ -32,7 +32,13 @@ body {
 #flex-container > footer {
   margin-top: auto;
 }
-
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #4caf50;
+}
 .todo-item {
   display: flex;
   align-items: center;
