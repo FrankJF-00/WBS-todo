@@ -1,30 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const todoInputElement = document.getElementById("todo-input");
-    const todoAddButton = document.getElementById("todo-add-btn");
-    const todoListElement = document.querySelector(".todo-list");
-  
-    function addTodo() {
-      const newTodoText = todoInputElement.value.trim();
-      if (newTodoText !== "") {
-        const todoItem = document.createElement("li");
-        todoItem.innerHTML = `
-            <div class="view">
-                <input class="toggle" type="checkbox">
-                <label>${newTodoText}</label>
-                <button class="destroy"></button>
-            </div>
-        `;
-        todoListElement.prepend(todoItem);
-        todoInputElement.value = "";
-      }
-    }
-  
-    todoAddButton.addEventListener("click", addTodo);
-  
-    todoInputElement.addEventListener("keypress", (event) => {
-      const ENTER_KEY = 13;
-      if (event.keyCode === ENTER_KEY) {
-        addTodo();
-      }
-    });
-  });
+// const todos = [];
+const listContainer = document.getElementById("todo-container");
+// create object todoList
+const todoList = {
+  // define function for adding a new todo item
+  addItem: function newItem() {
+    // create section with class "todo-item"
+    const newItem = document.createElement("section");
+    newItem.className = "todo-item";
+    // create input field with class and placeholder
+    const todoInput = document.createElement("input");
+    todoInput.className = "todo-input";
+    todoInput.placeholder = "add a tada";
+    // create delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-btn";
+    // create input type="checkbox"
+    const checkBtn = document.createElement("input");
+    checkBtn.type = "checkbox";
+    checkBtn.className = "check-btn";
+    // append all child elements to their parent elements
+    newItem.appendChild(todoInput);
+    newItem.appendChild(deleteBtn);
+    newItem.appendChild(checkBtn);
+    listContainer.prepend(newItem);
+  },
+};
+// button to test functionality
+document.querySelector("button").addEventListener("click", () => {
+  todoList.addItem();
+});
