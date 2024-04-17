@@ -31,17 +31,17 @@ const todoList = {
     deleteBtn.addEventListener("click", function () {
       newItem.remove(); // Remove the parent element (todo item)
     });
-    // Add event lsitener to the checked button
+    // Add event listener to the checked button
     checkBtn.addEventListener("change", function () {
       if (checkBtn.checked) {
         todoInput.style.textDecoration = "line-through";
         todoInput.style.color = "gray";
-        checkBtn.style.opacity = "0.5";
+        checkBtn.classList.add("check-btn-done");
         deleteBtn.style.opacity = "0.5";
       } else {
         todoInput.style.textDecoration = "none";
         todoInput.style.color = "black";
-        checkBtn.style.opacity = "1";
+        checkBtn.classList.remove("check-btn-done");
         deleteBtn.style.opacity = "1";
       }
     });
