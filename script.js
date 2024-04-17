@@ -34,16 +34,14 @@ const todoList = {
     // Add event listener to the checked button
     checkBtn.addEventListener("change", function () {
       if (checkBtn.checked) {
-        todoInput.style.textDecoration = "line-through";
-        todoInput.style.color = "gray";
-        checkBtn.classList.add("check-btn-done");
-        deleteBtn.style.opacity = "0.5";
+        checkBtn.classList.add("check-btn-checked");
+        todoInput.classList.add("input-checked");
+        deleteBtn.classList.add("delete-btn-disabled"); // Add the class to disable the delete button
         listContainer.appendChild(newItem); // Move the todo item to the bottom of the main
       } else {
-        todoInput.style.textDecoration = "none";
-        todoInput.style.color = "black";
-        checkBtn.classList.remove("check-btn-done");
-        deleteBtn.style.opacity = "1";
+        checkBtn.classList.remove("check-btn-checked");
+        todoInput.classList.remove("input-checked");
+        deleteBtn.classList.remove("delete-btn-disabled"); // Remove the class to enable the delete button
         listContainer.prepend(newItem); // Move the todo item back to the top of the main
       }
     });
@@ -54,7 +52,7 @@ const todoList = {
 function handleAddTodo() {
   // check if the input field is empty
   if (document.querySelector("input").value === "") {
-    alert("Write something");
+    alert("Please add a todo!");
   } else {
     todoList.addItem();
     document.querySelector("input").value = ""; // clear the input field

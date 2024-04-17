@@ -64,6 +64,7 @@ header {
   appearance: none;
   margin: 0.5rem;
   background-position: center;
+  opacity: 1;
 }
 .delete-btn {
   background-color: unset;
@@ -71,24 +72,23 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.delete-btn-disabled {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
 .check-btn {
   background-image: url("img/circle-check-regular.svg");
   background-repeat: no-repeat;
 }
-
-.check-btn-done {
+.check-btn-checked {
   background-image: url("img/circle-check-solid.svg");
   background-repeat: no-repeat;
+  opacity: 0.5;
 }
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #4caf50;
+.input-checked {
+  text-decoration: line-through;
+  color: grey;
 }
-
 #todo-input {
   flex-grow: 1;
   padding: 0.5rem;
