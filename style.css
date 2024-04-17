@@ -18,11 +18,7 @@ html {
 body {
   width: 25rem;
   margin: 0 auto;
-  background: linear-gradient(
-    185deg,
-    rgba(236, 239, 240, 1) 0%,
-    rgba(177, 180, 182, 1) 100%
-  );
+  background: linear-gradient(185deg, rgba(236, 239, 240, 1) 0%, rgba(177, 180, 182, 1) 100%);
 }
 
 /* This is to keep the footer at the bottom always */
@@ -75,6 +71,10 @@ header {
   background-image: url("img/trash-can-regular.svg");
   background-repeat: no-repeat;
   background-size: contain;
+}
+.delete-btn-disabled {
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 .check-btn {
   background-image: url("img/circle-check-regular.svg");

@@ -32,14 +32,18 @@ const todoList = {
     deleteBtn.addEventListener("click", function () {
       newItem.remove(); // Remove the parent element (todo item)
     });
-    // Add event lsitener to the checked button
+    // Add event listener to the checked button
     checkBtn.addEventListener("change", function () {
       if (checkBtn.checked) {
-        todoInput.classList.add("input-checked");
         checkBtn.classList.add("check-btn-checked");
+        todoInput.classList.add("input-checked");
+        deleteBtn.classList.add("delete-btn-disabled");
+        listContainer.appendChild(newItem); // Move the todo item to the bottom of the main
       } else {
         checkBtn.classList.remove("check-btn-checked");
         todoInput.classList.remove("input-checked");
+        deleteBtn.classList.remove("delete-btn-disabled");
+        listContainer.prepend(newItem); // Move the todo item back to the top of the main
       }
     });
   },
@@ -56,12 +60,11 @@ function handleAddTodo() {
   }
 }
 
-document
-  .querySelector("#todo-add-btn")
-  .addEventListener("click", handleAddTodo);
+// button to test functionality
+document.querySelector("#todo-add-btn").addEventListener("click", handleAddTodo);
 
 // listen for keydown event on the input field
-document.querySelector("input").addEventListener("keydown", (event) => {
+document.querySelector("#todo-input").addEventListener("keydown", (event) => {
   // check if the key pressed is ENTER
   if (event.key === "Enter") {
     handleAddTodo();
