@@ -34,15 +34,11 @@ const todoList = {
     // Add event lsitener to the checked button
     checkBtn.addEventListener("change", function () {
       if (checkBtn.checked) {
-        todoInput.style.textDecoration = "line-through";
-        todoInput.style.color = "gray";
-        checkBtn.style.opacity = "0.5";
-        deleteBtn.style.opacity = "0.5";
+        todoInput.classList.add("input-checked");
+        checkBtn.classList.add("check-btn-checked");
       } else {
-        todoInput.style.textDecoration = "none";
-        todoInput.style.color = "black";
-        checkBtn.style.opacity = "1";
-        deleteBtn.style.opacity = "1";
+        checkBtn.classList.remove("check-btn-checked");
+        todoInput.classList.remove("input-checked");
       }
     });
   },
@@ -52,14 +48,12 @@ const todoList = {
 function handleAddTodo() {
   // check if the input field is empty
   if (document.querySelector("input").value === "") {
-    alert("Write something");
+    alert("Please add a todo!");
   } else {
     todoList.addItem();
     document.querySelector("input").value = ""; // clear the input field
   }
 }
-
-// button to test functionality
 
 document
   .querySelector("#todo-add-btn")
