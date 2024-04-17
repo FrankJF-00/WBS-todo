@@ -2,6 +2,7 @@
 const listContainer = document.getElementById("todo-container");
 // create object todoList
 const todoList = {
+  input: document.querySelector("input"),
   // define function for adding a new todo item
   addItem: function newItem() {
     // create section with class "todo-item"
@@ -47,11 +48,11 @@ const todoList = {
 // function to handle adding a new todo item
 function handleAddTodo() {
   // check if the input field is empty
-  if (document.querySelector("input").value === "") {
-    alert("Please add a todo!");
+  if (todoList.input.value === "") {
+    todoList.input.placeholder = "Please add a todo!";
   } else {
     todoList.addItem();
-    document.querySelector("input").value = ""; // clear the input field
+    todoList.input.value = ""; // clear the input field
   }
 }
 
