@@ -60,7 +60,6 @@ function handleAddTodo() {
 }
 
 // button to test functionality
-<<<<<<< HEAD
 document.querySelector("button").addEventListener("click", handleAddTodo);
 
 // listen for keydown event on the input field
@@ -69,8 +68,4 @@ document.querySelector("input").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     handleAddTodo();
   }
-=======
-document.querySelector("#todo-add-btn").addEventListener("click", () => {
-  todoList.addItem();
->>>>>>> bff2a7ef0d74516f9a0ec0d6075c1f9a47ab126c
 });
