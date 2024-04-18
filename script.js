@@ -3,8 +3,9 @@ const listContainer = document.getElementById("todo-container");
 // create object todoList
 const todoList = {
   input: document.querySelector("input"),
+  addBtn: document.querySelector("#todo-add-btn"),
   // define function for adding a new todo item
-  addItem: function newItem() {
+  addItem: () => {
     // create section with class "todo-item"
     const newItem = document.createElement("section");
     newItem.className = "todo-item";
@@ -28,7 +29,7 @@ const todoList = {
     listContainer.prepend(newItem);
 
     // Add event listener to the delete button
-    deleteBtn.addEventListener("click", function () {
+    deleteBtn.addEventListener("click", () => {
       // Remove the parent element (todo item)
       newItem.remove();
     });
@@ -39,7 +40,7 @@ const todoList = {
       deleteBtn.classList[action]("delete-btn-disabled");
       listContainer[position](newItem);
     }
-    checkBtn.addEventListener("change", function () {
+    checkBtn.addEventListener("change", () => {
       if (checkBtn.checked) {
         // move todo item to the bottom
         moveItem("add", "appendChild");
@@ -55,20 +56,17 @@ const todoList = {
 function handleAddTodo() {
   // check if the input field is empty
   if (todoList.input.value.trim() === "") {
-    alert("Please add a todo!");
+    todoList.input.placeholder = "Please add your todo first!";
   } else {
     todoList.addItem();
     todoList.input.value = ""; // clear the input field
   }
 }
 
-document
-  .querySelector("#todo-add-btn")
-  .addEventListener("click", handleAddTodo);
+todoList.addBtn.addEventListener("click", handleAddTodo);
 
 // listen for keydown event on the input field
 todoList.input.addEventListener("keydown", (event) => {
-  // check if the key pressed is ENTER
   if (event.key === "Enter") {
     handleAddTodo();
   }
