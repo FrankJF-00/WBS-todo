@@ -155,11 +155,12 @@ header {
   clip-path: inset(50%);
 }
 .footer-buttons {
-  height: 100px;
+  height: 3.5rem;
   display: flex;
   justify-content: space-evenly;
   background-color: #4caf50;
   font-size: 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 #btnAll {
   background: #4caf50;
