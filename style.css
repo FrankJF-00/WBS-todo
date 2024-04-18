@@ -154,3 +154,31 @@ header {
   white-space: nowrap;
   clip-path: inset(50%);
 }
+.footer-buttons {
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #4caf50;
+  font-size: 1rem;
+}
+#btnAll {
+  background: #4caf50;
+  border-style: hidden;
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+#btnActive {
+  background: #4caf50;
+  border-style: hidden;
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+#btnDone {
+  background: #4caf50;
+  border-style: hidden;
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
