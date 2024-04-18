@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --bg-color: #4caf50;
+}
 
 /* OPTIONAL: Responsive font sizes. They get a bit big when on Desktop Fullscreen */
 html {
@@ -37,7 +40,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #4caf50;
+  background-color: var(--bg-color);
   border-radius: 0 0 0.25rem 0.25rem;
 }
 .todo-item {
@@ -107,7 +110,7 @@ header {
   border: none;
   border-radius: 50%;
   background-color: #fff;
-  color: #4caf50;
+  color: var(--bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,27 +157,14 @@ header {
   height: 3rem;
   display: flex;
   justify-content: space-evenly;
-  background-color: #4caf50;
+  background-color: var(--bg-color);
   font-size: 1rem;
 }
-#btnAll {
-  background: #4caf50;
-  border-style: hidden;
-  font-size: 1rem;
-  font-weight: 700;
-  opacity: 0.7;
-}
-#btnActive {
-  background: #4caf50;
-  border-style: hidden;
-  font-size: 1rem;
-  font-weight: 700;
-  opacity: 0.7;
-}
+#btnAll,
+#btnActive,
 #btnDone {
-  background: #4caf50;
-  border-style: hidden;
+  background: var(--bg-color);
+  border: none;
   font-size: 1rem;
-  font-weight: 700;
   opacity: 0.7;
 }
