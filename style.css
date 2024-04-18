@@ -36,16 +36,23 @@ body {
   flex-direction: column;
   min-height: 100svh;
 }
-#flex-container > footer {
-  margin-top: auto;
-}
 header {
+  position: fixed;
+  width: 25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: var(--bg-color);
   border-radius: 0 0 0.25rem 0.25rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 25rem;
+}
+#todo-container {
+  margin-top: 5rem;
 }
 .todo-item {
   display: flex;
@@ -110,7 +117,6 @@ header {
 }
 
 #todo-add-btn {
-  padding: 0.5rem;
   border: none;
   border-radius: 50%;
   background-color: #fff;
@@ -158,11 +164,12 @@ header {
   clip-path: inset(50%);
 }
 .footer-buttons {
-  height: 2rem;
+  height: 3.5rem;
   display: flex;
-  justify-content: space-evenly;
   background-color: var(--bg-color);
   font-size: 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  padding: 0.5rem;
 }
 #btnAll,
 #btnActive,
@@ -171,4 +178,16 @@ header {
   border: none;
   font-size: 1rem;
   opacity: 0.7;
+  cursor: pointer;
+  flex-grow: 1;
+}
+#btnAll:hover,
+#btnActive:hover,
+#btnDone:hover {
+  background-color: #2e8531;
+  color: #fff;
+}
+#btnActive {
+  border-left: grey 0.1rem solid;
+  border-right: grey 0.1rem solid;
 }
