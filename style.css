@@ -21,11 +21,7 @@ html {
 body {
   max-width: 25rem;
   margin: 0 auto;
-  background: linear-gradient(
-    185deg,
-    rgba(236, 239, 240, 1) 0%,
-    rgba(177, 180, 182, 1) 100%
-  );
+  background: linear-gradient(185deg, rgba(236, 239, 240, 1) 0%, rgba(177, 180, 182, 1) 100%);
 }
 
 /* This is to keep the footer at the bottom always */
@@ -38,7 +34,8 @@ body {
 }
 header {
   position: fixed;
-  width: 25rem;
+  max-width: 25rem;
+  width: 100svw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,11 +43,18 @@ header {
   background-color: var(--bg-color);
   border-radius: 0 0 0.25rem 0.25rem;
 }
+
+main {
+  margin-bottom: 3.8rem;
+}
+
 footer {
   position: fixed;
   bottom: 0;
-  width: 25rem;
+  max-width: 25rem;
+  width: 100svw;
 }
+
 #todo-container {
   margin-top: 5rem;
 }
