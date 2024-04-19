@@ -78,6 +78,8 @@ todoList.getStorage.addEventListener("click", () => {
 
 todoList.clearStorage.addEventListener("click", () => {
   localStorage.clear();
+  listContainer.replaceChildren();
+  todos = [];
 });
 function handleAddTodo() {
   // check if the input field is empty
