@@ -52,14 +52,20 @@ const todoList = {
   },
 };
 
-// function to handle adding a new todo item
 function handleAddTodo() {
   // check if the input field is empty
   if (todoList.input.value.trim() === "") {
+    // Add shake effect to the input field
+    todoList.input.classList.add("shake");
+    todoList.input.value = ""; // clear the input field
     todoList.input.placeholder = "Please add your todo first!";
+    setTimeout(() => {
+      todoList.input.classList.remove("shake");
+    }, 500);
   } else {
     todoList.addItem();
     todoList.input.value = ""; // clear the input field
+    todoList.input.placeholder = "Add your todo!";
   }
 }
 
