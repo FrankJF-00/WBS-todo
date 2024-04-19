@@ -1,9 +1,10 @@
-// const todos = [];
+const todos = [];
 const listContainer = document.getElementById("todo-container");
 // create object todoList
 const todoList = {
   input: document.querySelector("input"),
   addBtn: document.querySelector("#todo-add-btn"),
+  deleteAll: document.getElementById("btnDone"),
   // define function for adding a new todo item
   addItem: () => {
     // create section with class "todo-item"
@@ -15,6 +16,8 @@ const todoList = {
     todoInput.placeholder = "add a tada";
     // Copy the text from the input field and paste it into the newly created input
     todoInput.value = todoList.input.value.trim(); // Trim the input value
+    todos.push(todoInput.value);
+    localStorage.setItem("savedTodos", todos);
     // create delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
@@ -42,15 +45,28 @@ const todoList = {
     }
     checkBtn.addEventListener("change", () => {
       if (checkBtn.checked) {
+        newItem.classList.add("done");
         // move todo item to the bottom
         moveItem("add", "appendChild");
       } else {
         // move todo item back to the top
         moveItem("remove", "prepend");
+        newItem.classList.remove("done");
       }
     });
   },
 };
+
+// console.log(localStorage.getItem("savedTodos").split(","));
+if (localStorage.getItem("savedTodos") != null) {
+  localStorage
+    .getItem("savedTodos")
+    .split(",")
+    .map((stored) => {
+      todoList.input.value = stored;
+      todoList.addItem();
+    });
+}
 
 function handleAddTodo() {
   // check if the input field is empty
@@ -76,4 +92,8 @@ todoList.input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     handleAddTodo();
   }
+});
+todoList.deleteAll.addEventListener("click", () => {
+  const finishedItems = Array.from(document.getElementsByClassName("done"));
+  finishedItems.map((item) => item.remove());
 });
