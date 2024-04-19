@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 :root {
-  --bg-color: #4caf50;
+  --bg-color: #5bbcff;
 }
 
 /* OPTIONAL: Responsive font sizes. They get a bit big when on Desktop Fullscreen */
@@ -21,11 +21,7 @@ html {
 body {
   max-width: 25rem;
   margin: 0 auto;
-  background: linear-gradient(
-    185deg,
-    rgba(236, 239, 240, 1) 0%,
-    rgba(177, 180, 182, 1) 100%
-  );
+  background-color: #fffab7;
 }
 
 /* This is to keep the footer at the bottom always */
@@ -55,7 +51,7 @@ main {
 footer {
   position: fixed;
   bottom: 0;
-  box-shadow: 0 -10px 25px -5px #bbbebf;
+  /* box-shadow: 0 -10px 25px -5px #bbbebf; */
   border-radius: 0.25rem 0.25rem 0 0;
   max-width: 25rem;
   width: 100svw;
@@ -82,6 +78,7 @@ footer {
   font-size: 1rem;
   padding: 0.25rem;
   margin: 0.2rem;
+  opacity: 0.7;
 }
 .delete-btn,
 .check-btn {
@@ -92,12 +89,14 @@ footer {
   margin: 0.5rem;
   background-position: center;
   opacity: 1;
+  cursor: pointer;
 }
 .delete-btn {
   background-color: unset;
   background-image: url("img/trash-can-regular.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  opacity: 0.5;
 }
 .delete-btn-disabled {
   opacity: 0.5;
@@ -106,11 +105,14 @@ footer {
 .check-btn {
   background-image: url("img/circle-check-regular.svg");
   background-repeat: no-repeat;
+  font-weight: bold;
+  transform: scale(1.2);
 }
 .check-btn-checked {
   background-image: url("img/circle-check-solid.svg");
   background-repeat: no-repeat;
   opacity: 0.5;
+  transform: scale(1.2);
 }
 .input-checked {
   text-decoration: line-through;
@@ -137,6 +139,7 @@ footer {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .fa-regular {
@@ -194,12 +197,12 @@ footer {
 #btnAll:hover,
 #btnActive:hover,
 #btnDone:hover {
-  background-color: #2e8531;
+  background-color: #7ea1ff;
   color: #fff;
 }
 #btnActive {
-  border-left: grey 0.1rem solid;
-  border-right: grey 0.1rem solid;
+  border-left: #fffab7 0.1rem solid;
+  border-right: #fffab7 0.1rem solid;
 }
 #todo-container > .done {
   margin-top: 3rem;
