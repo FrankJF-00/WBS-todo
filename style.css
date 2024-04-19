@@ -21,7 +21,7 @@ html {
 body {
   max-width: 25rem;
   margin: 0 auto;
-  background-color: #fffab7;
+  background-color: #000;
 }
 
 /* This is to keep the footer at the bottom always */
@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100svh;
+  background-color: #fffab7;
 }
 header {
   position: fixed;

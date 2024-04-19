@@ -1,4 +1,4 @@
-const todos = [];
+let todos = [];
 const listContainer = document.getElementById("todo-container");
 // create object todoList
 const todoList = {
