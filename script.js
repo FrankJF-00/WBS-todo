@@ -18,7 +18,6 @@ const todoList = {
     todoInput.value = todoList.input.value.trim(); // Trim the input value
     todos.push(todoInput.value);
     localStorage.setItem("savedTodos", todos);
-    console.log(localStorage.getItem("savedTodos").split(","));
     // create delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
@@ -57,6 +56,17 @@ const todoList = {
     });
   },
 };
+
+// console.log(localStorage.getItem("savedTodos").split(","));
+if (localStorage.getItem("savedTodos") != null) {
+  localStorage
+    .getItem("savedTodos")
+    .split(",")
+    .map((stored) => {
+      todoList.input.value = stored;
+      todoList.addItem();
+    });
+}
 
 function handleAddTodo() {
   // check if the input field is empty
