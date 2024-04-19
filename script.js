@@ -5,6 +5,8 @@ const todoList = {
   input: document.querySelector("input"),
   addBtn: document.querySelector("#todo-add-btn"),
   deleteAll: document.getElementById("btnDone"),
+  clearStorage: document.getElementById("btnAll"),
+  getStorage: document.getElementById("btnActive"),
   // define function for adding a new todo item
   addItem: () => {
     // create section with class "todo-item"
@@ -46,28 +48,37 @@ const todoList = {
     checkBtn.addEventListener("change", () => {
       if (checkBtn.checked) {
         newItem.classList.add("done");
+        // todoInput.value = todoInput.value + "*";
+        // localStorage.setItem("savedTodos", todos);
         // move todo item to the bottom
         moveItem("add", "appendChild");
       } else {
         // move todo item back to the top
         moveItem("remove", "prepend");
         newItem.classList.remove("done");
+        // todoInput.value = todoInput.value;
+        // localStorage.setItem("savedTodos", todos);
       }
     });
   },
 };
+todoList.getStorage.addEventListener("click", () => {
+  if (localStorage.getItem("savedTodos") != null) {
+    console.log(localStorage.getItem("savedTodos").split(","));
+    localStorage
+      .getItem("savedTodos")
+      .split(",")
+      .map((stored) => {
+        todoList.input.value = stored;
+        todoList.addItem();
+        todoList.input.value = "";
+      });
+  }
+});
 
-// console.log(localStorage.getItem("savedTodos").split(","));
-if (localStorage.getItem("savedTodos") != null) {
-  localStorage
-    .getItem("savedTodos")
-    .split(",")
-    .map((stored) => {
-      todoList.input.value = stored;
-      todoList.addItem();
-    });
-}
-
+todoList.clearStorage.addEventListener("click", () => {
+  localStorage.clear();
+});
 function handleAddTodo() {
   // check if the input field is empty
   if (todoList.input.value.trim() === "") {
